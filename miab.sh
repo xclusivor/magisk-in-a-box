@@ -2,7 +2,9 @@
 
 # Magisk in a Box
 # Dockerized Magisk that let's you easily root boot images without the need for an Android device or emulator.
-# Usage: ./magisk-in-a-box.sh <32/64> <boot.img/AP...tar.md5
+#
+# Usage: ./miab.sh <32/64> <boot.img/AP...tar.md5>
+#
 
 if [ ! -d "host/" ]
 then 
