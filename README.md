@@ -7,7 +7,7 @@ Due to the way Magisk works, there is no particular reason patching needs to be 
 This thing is overkill, but there is a quite a bit of setup if you're to do this manually.
 
 ## How
-Magisk actually provides several shell scripts to patch images in a Linux environment. This tool makes it easy to use them.
+Magisk actually provides several shell scripts to patch images in an Android environment. Though intended for Android, the scripts mostly work outside of it. This tool makes them easy to use.
 
 The Docker image will do the following:
 1. Install necessary packages
@@ -21,7 +21,7 @@ Build the image (This will take a long time): `docker run -t miab`
 
 Start an interactive shell: `docker run --rm -it -v $(pwd):/home/miab/host miab`
 
-Run MIAB: `./magisk-in-a-box.sh <32/64> <boot.img/AP...tar.md5`
+Run MIAB: `./miab.sh <32/64> <boot.img/AP...tar.md5>`
 
 If given an AP file, the boot.img will be output as an Odin flashable `.tar.md5`. Patched images are output to your host's filesystem where you ran the image. 
 
@@ -29,7 +29,7 @@ If given an AP file, the boot.img will be output as an Odin flashable `.tar.md5`
 1. Build Magisk's native binaries and stub apk. 
 2. Place the `magiskboot` binary that matches your **hosts** architecture in Magsk's `scripts/` directory.
 2. Place the `magiskinit` and `magisk` binaries that matches your **targets** architecture in the `scripts/` directory. (adding 32 or 64 to the end of the `magisk` binary depending on target architecture)
-3. Place `./magisk-in-a-box.sh` in the `scripts/` folder and refer to usage above.
+3. Place `./miab.sh` in the `scripts/` folder and refer to usage above.
 
 ## Notes
 - Magisk in a Box currently only supports ARM and AArch64 targets. x86 and x86_64 are trivial to add, but are not in the initial release.
